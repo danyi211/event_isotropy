@@ -27,11 +27,11 @@ python -m pip install "git+https://github.com/caricesarotti/event_isotropy.git#e
 This is the module with the functions to calculate the distances between sets for several distance measures as well as the event isotropy.
 
 - Geometries
-For the spherical case, one can calculate the <img src="https://render.githubusercontent.com/render/math?math=1-\cos\theta"> measure (`_cdist_cos(X,Y)`) or the <img src="https://render.githubusercontent.com/render/math?math=\sqrt{1-\cos\theta}"> measure (`_cdist_sqrt_cos(X,Y)`). To calculate, pass these functions arrays X, Y of the 3 momenta of each set.
+For the spherical case, one can calculate the $1-\cos\theta$ measure (`_cdist_cos(X,Y)`) or the $\sqrt{1-\cos\theta}$ measure (`_cdist_sqrt_cos(X,Y)`). To calculate, pass these functions arrays X, Y of the 3 momenta of each set.
 
-For the cylindrical case, one can calculate the squared Euclidean distance in <img src="https://render.githubusercontent.com/render/math?math=y-\phi"> space (`_cdist_phi_y(X,Y,ymax)`) or the unnormalized Euclidean distance in <img src="https://render.githubusercontent.com/render/math?math=y-\phi"> (`_cdist_phi_y_sqrt(X,Y)`) space. Pass these functions arrays of the position in <img src="https://render.githubusercontent.com/render/math?math=(y,\phi)"> space and the maximum value of `y` ymax.
+For the cylindrical case, one can calculate the squared Euclidean distance in $y-\phi$ space (`_cdist_phi_y(X,Y,ymax)`) or the unnormalized Euclidean distance in $y-\phi$ (`_cdist_phi_y_sqrt(X,Y)`) space. Pass these functions arrays of the position in $(y,\phi)$ space and the maximum value of `y` ymax.
 
-For the ring case, one can calculate the distance in <img src="https://render.githubusercontent.com/render/math?math=\phi"> (`_cdist_phi(X,Y)`) and <img src="https://render.githubusercontent.com/render/math?math=1-\cos\phi"> (`_cdist_phicos(X,Y)`). Pass the function the arrays of <img src="https://render.githubusercontent.com/render/math?math=\phi"> values X, Y.
+For the ring case, one can calculate the distance in $\phi$ (`_cdist_phi(X,Y)`) and $1-\cos\phi$ (`_cdist_phicos(X,Y)`). Pass the function the arrays of $\phi$ values X, Y.
 
 - Event Isotropy Calculation
 To calculate the event isotropy, use the function `emd_Calc(ev0,ev1,M)` where ev0, ev1 are the energy weights of the event and the uniform event, and M is the distance matrix between them as computed by one of the previous functions.
@@ -39,13 +39,13 @@ Note, this function will also accept user defined distance matrices of the corre
 
 ### `spherGen.py`
 
-Generates spherical samples and some related quantities. To generate a spherical quasi-uniform event with <img src="https://render.githubusercontent.com/render/math?math=n=12\times2^{2i}"> particles for <img src="https://render.githubusercontent.com/render/math?math=i\in\mathbb{Z}">, use `sphericalGen(i)`
+Generates spherical samples and some related quantities. To generate a spherical quasi-uniform event with $n=12\times2^{2i}$ particles for $i\in\mathbb{Z}$, use `sphericalGen(i)`
 
 ### `cylGen.py`
 
-Generates cylindrical samples and ring-like samples, as well as related quatities. To generate a cylinder with uniform tiling in the <img src="https://render.githubusercontent.com/render/math?math=y-\phi"> plane, use `cylinderGen(piSeg, etaMax)` where piSeg is an integer, the number of slices in <img src="https://render.githubusercontent.com/render/math?math=\phi">.
+Generates cylindrical samples and ring-like samples, as well as related quatities. To generate a cylinder with uniform tiling in the $y-\phi$ plane, use `cylinderGen(piSeg, etaMax)` where piSeg is an integer, the number of slices in $\phi$.
 
-For a ring-like sample, use `ringGen(piSeg)` where piSeg is an integer, the number of slices in <img src="https://render.githubusercontent.com/render/math?math=\phi">.
+For a ring-like sample, use `ringGen(piSeg)` where piSeg is an integer, the number of slices in $\phi$.
 
 ## Examples
 
@@ -58,7 +58,7 @@ python -m pip install --upgrade -e .[test]
 
 ### `evIsoSphere.py` file i
 
-Calculates the spherical event isotropy of an uploaded event. User specifies `file` name of event and spherical index `i`. The file should be saved as the four momenta of the particles. `i` is the sphere index, not particle number, and corresponds to the tiling of the quasi uniform comparison sphere. The number of particles in the sphere will be <img src="https://render.githubusercontent.com/render/math?math=n=12\times2^{2i}">.
+Calculates the spherical event isotropy of an uploaded event. User specifies `file` name of event and spherical index `i`. The file should be saved as the four momenta of the particles. `i` is the sphere index, not particle number, and corresponds to the tiling of the quasi uniform comparison sphere. The number of particles in the sphere will be $n=12\times2^{2i}$.
 
 ### `evIsoCyl.py`
 
